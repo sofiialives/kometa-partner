@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КОМЕТА × Партнёрская программа</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <div class="starfield" aria-hidden="true">
+    <div class="star-layer star-layer--small"></div>
+    <div class="star-layer star-layer--medium"></div>
+    <div class="star-layer star-layer--colored"></div>
+  </div>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-blob ambient-blob--1"></div>
+    <div class="ambient-blob ambient-blob--2"></div>
+    <div class="ambient-blob ambient-blob--3"></div>
+    <div class="ambient-blob ambient-blob--4"></div>
+  </div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <div class="page">
+    <header class="header">
+      <div class="container header__inner">
+        <img src="./images/kometa.png" alt="KOMETA logo" class="header__brand-logo">
+        <div class="header__label">Партнёрская программа · Обучение · 2026</div>
+        <div class="header__partner-badge">
+          <span class="header__partner-badge-dot"></span>
+          Для партнёров
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="app-shell">
+
+    <div class="step-progress" id="stepProgress">
+      <div class="step-progress__track"><div class="step-progress__fill" id="stepProgressFill" style="width:12.5%"></div></div>
+      <div class="step-progress__label" id="stepProgressLabel">ШАГ <b>1</b> ИЗ 8</div>
+    </div>
+
+    <!-- ============ STEP 1 · ПРИВЕТСТВИЕ ============ -->
+    <section class="app-view is-active" id="view-1">
+      <div class="step-eyebrow">Приветствие</div>
+      <h1 class="step-title">Привет, партнёр!</h1>
+      <p class="step-sub">Мы рады, что ты с нами. Это обучение поможет тебе разобраться, чем мы занимаемся и как ты сможешь зарабатывать вместе с нами.</p>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Как устроено обучение</div>
+        <ul>
+          <li>Сначала ты узнаешь о компании и наших услугах</li>
+          <li>Потом разберёшь, как мы работаем с клиентами</li>
+          <li>В конце — практическое задание и короткий тест</li>
+          <li>После каждого блока можно оставить вопрос или комментарий</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:28px">
+        <div class="field">
+          <label class="field__label">Как тебя зовут? (имя + tg username)</label>
+          <input type="text" class="field__input" id="f-name" placeholder="Например: Ибрагим @ibra_54">
+          <div class="field__error">Формат: Имя @username (через пробел и собачку)</div>
+        </div>
+        <div class="field">
+          <label class="field__label">Сколько тебе лет?</label>
+          <input type="text" class="field__input" id="f-age" placeholder="Например: 19">
+          <div class="field__error">Заполни это поле</div>
+        </div>
+        <div class="field">
+          <label class="field__label">Есть ли опыт в продажах или маркетинге?</label>
+          <input type="text" class="field__input" id="f-experience" placeholder="Опиши коротко">
+          <div class="field__error">Заполни это поле</div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--primary" id="btn-step1-next">Начать обучение <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 2 · О КОМПАНИИ ============ -->
+    <section class="app-view" id="view-2">
+      <div class="step-eyebrow">О компании</div>
+      <h1 class="step-title">Кто такие КОМЕТА</h1>
+      <p class="step-sub">Прочитай внимательно — это фундамент, на котором строится вся работа.</p>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Миссия</div>
+        <p class="info-card__text">Мы предоставляем комплексные маркетинговые решения для ведущих digital, Media и Web3 проектов по всему миру. От закупки рекламы и построения воронок до дизайна, разработки приложений и полноценных платформ.</p>
+      </div>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Наши клиенты</div>
+        <p class="info-card__text">Крипто-биржи, финансовые сервисы, образовательные платформы, SaaS-продукты, премиум-бизнесы — от стартапов до крупных брендов.</p>
+      </div>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Почему это выгодно для тебя</div>
+        <ul>
+          <li>Высокие чеки — средний проект от $1,500 до $8,000+</li>
+          <li>Партнёрское вознаграждение за каждого привлечённого клиента</li>
+          <li>Полная поддержка: мы закрываем весь продакшн, ты фокусируешься на продажах</li>
+          <li>Обучение, скрипты, примеры — всё предоставляем</li>
+        </ul>
+      </div>
+
+      <div class="link-row">
+        <span class="link-chip link-chip--static">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Сайт — в разработке
+        </span>
+        <a class="link-chip" href="https://t.me/cometaweb3" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          @cometaweb3
+        </a>
+      </div>
+
+      <div class="field" style="margin-top:24px">
+        <label class="field__label">Обратная связь</label>
+        <textarea class="field__textarea" id="f-step2-feedback" placeholder="Что понятно, что вызывает вопросы?"></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" data-back>Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" data-next>Далее: наши услуги <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 3 · НАШИ УСЛУГИ ============ -->
+    <section class="app-view" id="view-3">
+      <div class="step-eyebrow">Наши услуги</div>
+      <h1 class="step-title">Три направления, которые ты будешь продавать</h1>
+      <p class="step-sub">Изучи каждое — в практическом задании нужно будет найти клиентов под каждое из них.</p>
+
+      <div class="service-card glass">
+        <span class="service-card__tag">Направление 1</span>
+        <div class="service-card__title">Закупка рекламы</div>
+        <p class="service-card__desc">Мы закупаем рекламу в Telegram-каналах, у блогеров, на площадках и форумах. Подбираем размещения индивидуально, контролируем выход и анализируем результаты.</p>
+        <div class="service-card__meta">
+          <div><div class="service-card__meta-label">Средний чек</div><div class="service-card__meta-value">от $2,000/мес</div></div>
+          <div><div class="service-card__meta-label">Клиенты</div><div class="service-card__meta-value">Крипто, трейдинг, финансы, образование</div></div>
+        </div>
+      </div>
+
+      <div class="service-card glass">
+        <span class="service-card__tag">Направление 2</span>
+        <div class="service-card__title">Упаковка + ведение ТГ</div>
+        <p class="service-card__desc">Полная упаковка Telegram-канала: оформление, контент-стратегия, шаблоны постов, welcome-бот, воронки.</p>
+        <div class="service-card__meta">
+          <div><div class="service-card__meta-label">Средний чек</div><div class="service-card__meta-value">от $1,500</div></div>
+          <div><div class="service-card__meta-label">Клиенты</div><div class="service-card__meta-value">Косметология, юристы, коучи, премиум-сервисы</div></div>
+        </div>
+      </div>
+
+      <div class="service-card glass">
+        <span class="service-card__tag">Направление 3</span>
+        <div class="service-card__title">Разработка / редизайн сайтов</div>
+        <p class="service-card__desc">Создаём современные сайты с фокусом на конверсию: лендинги, многостраничники, интернет-магазины.</p>
+        <div class="service-card__meta">
+          <div><div class="service-card__meta-label">Средний чек</div><div class="service-card__meta-value">от $2,500 до $8,000+</div></div>
+          <div><div class="service-card__meta-label">Клиенты</div><div class="service-card__meta-value">Рестораны, клиники, e-commerce, B2B, IT</div></div>
+        </div>
+      </div>
+
+      <div class="service-card glass">
+        <span class="service-card__tag">Направление 4</span>
+        <div class="service-card__title">Амбассадорская программа</div>
+        <p class="service-card__desc">Строим для клиента сеть амбассадоров — находим экспертов и блогеров в его нише, договариваемся о сотрудничестве, собираем инфраструктуру: чат, бота, реферальную систему и мотивацию.</p>
+        <div class="service-card__meta">
+          <div><div class="service-card__meta-label">Средний чек</div><div class="service-card__meta-value">от $3,000/мес</div></div>
+          <div><div class="service-card__meta-label">Клиенты</div><div class="service-card__meta-value">Крипто-биржи, Web3-проекты, образовательные платформы</div></div>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:24px">
+        <label class="field__label">Какое направление тебе ближе всего?</label>
+        <textarea class="field__textarea" id="f-step3-direction" placeholder="Напиши какое и почему"></textarea>
+        <div class="field__error">Напиши, какое направление тебе ближе</div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" data-back>Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" data-next>Далее: как работать <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 4 · ПРОЦЕСС РАБОТЫ ============ -->
+    <section class="app-view" id="view-4">
+      <div class="step-eyebrow">Процесс работы</div>
+      <h1 class="step-title">Как мы работаем с клиентами</h1>
+      <p class="step-sub">Пошаговый процесс от первого контакта до закрытия сделки.</p>
+
+      <div class="glass" style="padding:8px 26px">
+        <div class="process-step">
+          <div class="process-step__num">1</div>
+          <div><div class="process-step__title">Найти потенциального клиента</div><div class="process-step__desc">Анализируешь рынок: ищешь проекты, которым нужны наши услуги. Telegram-каналы, сайты, соцсети, форумы, агрегаторы — источников много.</div></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">2</div>
+          <div><div class="process-step__title">Написать холодное сообщение</div><div class="process-step__desc">Персонализированное сообщение через Telegram. Не шаблон, а конкретное предложение. Первые 2 предложения решают всё.</div></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">3</div>
+          <div><div class="process-step__title">Провести диалог с клиентом</div><div class="process-step__desc">Если клиент ответил — выясняешь потребности, убеждаешься что ему интересны услуги и есть бюджет. Сначала понимаешь задачу, потом предлагаешь решение.</div></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">4</div>
+          <div><div class="process-step__title">Передать в работу</div><div class="process-step__desc">Когда клиент согласен — оформляешь заявку в CRM. Наша команда берёт проект в работу. Ты контролируешь коммуникацию.</div></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">5</div>
+          <div><div class="process-step__title">Получить вознаграждение</div><div class="process-step__desc">После оплаты клиентом — ты получаешь своё партнёрское вознаграждение. Чем больше клиентов — тем выше доход.</div></div>
+        </div>
+      </div>
+
+      <div class="info-card glass" style="margin-top:16px">
+        <div class="info-card__label">Важно запомнить</div>
+        <p class="info-card__text">Ты не один. На каждом этапе у тебя есть поддержка: скрипты, шаблоны, обратная связь от команды.</p>
+      </div>
+
+      <div class="field" style="margin-top:24px">
+        <label class="field__label">Обратная связь</label>
+        <textarea class="field__textarea" id="f-step4-feedback" placeholder="Всё понятно? Есть вопросы по процессу?"></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" data-back>Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" data-next>Перейти к практике <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 5 · ЗАДАНИЕ 1: НАЙДИ КЛИЕНТОВ ============ -->
+    <section class="app-view" id="view-5">
+      <div class="step-eyebrow">Практика: найди клиентов</div>
+      <h1 class="step-title">Задание 1: Найди клиентов</h1>
+      <p class="step-sub">Сначала изучи, как и где искать клиентов. Потом выполни задание.</p>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Где искать клиентов</div>
+        <ul>
+          <li>Telegram — каналы проектов, чаты по крипте, маркетингу, бизнесу</li>
+          <li>Instagram / TikTok — эксперты, блогеры, бизнесы без агентства</li>
+          <li>Сайты и лендинги — проекты с устаревшим дизайном</li>
+          <li>Агрегаторы — CoinMarketCap, CoinGecko, ProductHunt</li>
+          <li>LinkedIn — фаундеры и маркетологи</li>
+          <li>Конкуренты — кто размещает рекламу = есть бюджет</li>
+          <li>Чаты и форумы — где ищут подрядчиков</li>
+        </ul>
+      </div>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Как понять что клиент подходит</div>
+        <ul>
+          <li>У проекта есть продукт, но слабый маркетинг</li>
+          <li>Канал ведётся нерегулярно или непрофессионально</li>
+          <li>Проект активен, но не растёт</li>
+          <li>Есть бюджет — уже зарабатывает или имеет инвестиции</li>
+          <li>Конкуренты уже работают с агентствами</li>
+        </ul>
+      </div>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Как найти контактное лицо</div>
+        <ul>
+          <li>В описании TG-канала — username админа или бота</li>
+          <li>На сайте — раздел «Контакты»</li>
+          <li>LinkedIn — фаундер, CMO, маркетолог</li>
+          <li>Через бота канала — попросить контакт</li>
+        </ul>
+      </div>
+
+      <div class="info-card glass" style="margin-bottom:28px">
+        <div class="info-card__label">Твоя задача</div>
+        <p class="info-card__text">Найди 6 потенциальных клиентов — по 2 на каждое направление. Покажи что умеешь анализировать рынок.<br><span style="color:var(--fg3);font-size:13px">На выполнение: 10 часов</span></p>
+      </div>
+
+      <div class="direction-label">Направление: Закупка</div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">1</span>Закупка</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c1-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c1-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Почему подходит?</label><textarea class="field__textarea" id="c1-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">2</span>Закупка</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c2-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c2-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Почему подходит?</label><textarea class="field__textarea" id="c2-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+
+      <div class="direction-label">Направление: Упаковка</div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">3</span>Упаковка</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c3-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c3-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Почему подходит?</label><textarea class="field__textarea" id="c3-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">4</span>Упаковка</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c4-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c4-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Почему подходит?</label><textarea class="field__textarea" id="c4-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+
+      <div class="direction-label">Направление: Любая услуга</div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">5</span>Любая услуга</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c5-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c5-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Какую услугу предложишь и почему?</label><textarea class="field__textarea" id="c5-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+      <div class="client-entry glass">
+        <div class="client-entry__title"><span class="client-entry__num">6</span>Любая услуга</div>
+        <div class="field"><label class="field__label">Ссылка на проект</label><input type="text" class="field__input" id="c6-link" placeholder="https://t.me/..."><div class="field__error">Заполни ссылку</div></div>
+        <div class="field"><label class="field__label">Контактное лицо</label><input type="text" class="field__input" id="c6-contact" placeholder="@username"><div class="field__error">Заполни контакт</div></div>
+        <div class="field" style="margin-bottom:0"><label class="field__label">Какую услугу предложишь и почему?</label><textarea class="field__textarea" id="c6-why"></textarea><div class="field__error">Заполни ответ</div></div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" data-back>Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" data-next>Далее: сообщение <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 6 · ЗАДАНИЕ 2: СООБЩЕНИЕ ============ -->
+    <section class="app-view" id="view-6">
+      <div class="step-eyebrow">Практика: сообщение</div>
+      <h1 class="step-title">Задание 2: Приветственное сообщение</h1>
+      <p class="step-sub">Напиши своё сообщение для холодного контакта по каждому направлению.</p>
+
+      <div class="info-card glass">
+        <div class="info-card__label">Советы</div>
+        <p class="info-card__text">Первые 2 предложения решают всё. Покажи что изучил проект клиента. Задай вопрос в конце.</p>
+      </div>
+
+      <div class="example-card">
+        <div class="example-card__label">Пример: закупка рекламы</div>
+        <div class="example-card__text">Добрый день, меня зовут Сергей. Посмотрели ваш проект/канал. Мы работаем с Tier1 проектами: Antarctic Wallet, BestChange, биржа Weex. У нас большая база блогеров, Telegram-каналов и YouTube. Подбираем размещения индивидуально. Если интересно усилить продвижение — могу задать пару вопросов?</div>
+      </div>
+      <div class="field">
+        <label class="field__label">Твоё сообщение для закупки</label>
+        <textarea class="field__textarea" id="f-msg-purchase"></textarea><div class="field__error">Напиши своё сообщение</div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-card__label">Пример: упаковка и ведение</div>
+        <div class="example-card__text">Добрый день, меня зовут Сергей. Посмотрели ваш Telegram. В премиум-сегменте канал — это часть имиджа и доверия клиентов. Мы агентство полного цикла: можем взять ведение, оформлять посты, продумывать стратегию. Если интересно — могу задать пару вопросов?</div>
+      </div>
+      <div class="field">
+        <label class="field__label">Твоё сообщение для упаковки</label>
+        <textarea class="field__textarea" id="f-msg-packaging"></textarea><div class="field__error">Напиши своё сообщение</div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-card__label">Пример: универсальное сообщение</div>
+        <div class="example-card__text">Добрый день, меня зовут Сергей. Обратил внимание на ваш проект — вижу хороший потенциал для роста. Мы агентство полного цикла: от продвижения и закупки рекламы до упаковки каналов и разработки сайтов. Если интересно обсудить — могу задать пару вопросов?</div>
+      </div>
+      <div class="field">
+        <label class="field__label">Твоё универсальное сообщение</label>
+        <textarea class="field__textarea" id="f-msg-universal"></textarea><div class="field__error">Напиши своё сообщение</div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" data-back>Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" data-next>Далее: бриф-тест <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 7a · БРИФ-ТЕСТ: ВЫБОР УРОВНЯ ============ -->
+    <section class="app-view" id="view-7-level">
+      <div class="step-eyebrow">Бриф-тест</div>
+      <h1 class="step-title">Задание 3: Проверка мышления</h1>
+      <p class="step-sub">Выбери свой уровень и ответь на вопросы пошагово.</p>
+
+      <div class="level-grid">
+        <div class="level-card glass" id="level-novice">
+          <div class="level-card__title">Новичок</div>
+          <div class="level-card__desc">Нет опыта в продажах</div>
+        </div>
+        <div class="level-card glass" id="level-experienced">
+          <div class="level-card__title">Есть опыт</div>
+          <div class="level-card__desc">Работал в продажах / маркетинге</div>
+        </div>
+      </div>
+
+      <div class="step-nav__back-link" data-back>← Назад к заданиям</div>
+    </section>
+
+    <!-- ============ STEP 7b · БРИФ-ТЕСТ: ВОПРОС (динамический) ============ -->
+    <section class="app-view" id="view-7-question">
+      <div class="step-eyebrow">Бриф-тест</div>
+      <h1 class="step-title">Задание 3: Проверка мышления</h1>
+      <p class="step-sub">Выбери свой уровень и ответь на вопросы пошагово.</p>
+
+      <div class="glass" style="padding:28px 26px">
+        <div class="question-block__meta-row">
+          <div class="question-block__meta" id="q-meta">Блок · Вопрос 1 из 9</div>
+          <button type="button" class="q-change-level-link" id="q-change-level" style="display:none">Сменить уровень</button>
+        </div>
+        <div class="question-block__context" id="q-context" style="display:none"></div>
+        <div class="question-block__text" id="q-text"></div>
+        <textarea class="field__textarea" id="q-answer" style="min-height:130px"></textarea>
+        <div class="field__error" id="q-error">Заполни ответ перед тем, как идти дальше</div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn-nav btn-nav--ghost" id="q-back">Назад</button>
+        <button type="button" class="btn-nav btn-nav--primary" id="q-next">Следующий</button>
+      </div>
+      <div class="step-nav__back-link" data-back style="margin-top:20px;margin-bottom:0">← К заданиям</div>
+    </section>
+
+    <!-- ============ STEP 8 · СПАСИБО ============ -->
+    <section class="app-view" id="view-8">
+      <div class="step-eyebrow">Готово</div>
+      <div class="done-wrap">
+        <div class="done-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="done-title" id="doneTitle">Спасибо!</div>
+        <p class="done-text" id="doneText">Твои ответы отправлены на проверку. Мы посмотрим внимательно и свяжемся с тобой в Telegram в ближайшее время.</p>
+        <div class="submit-error" id="submitError"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="divider"></div>
+    <div class="bg-word" style="left:50%;transform:translate(-50%,-50%)">KOMETA</div>
+    <div class="container section__pad-top footer__inner">
+      <div data-delay="0">
+        <div class="footer__brand">
+          <div class="footer__brand-name">KOMETA</div>
+          <div class="footer__brand-sub">WEB3 AGENCY</div>
+        </div>
+        <div class="mono-caption" style="margin-bottom:20px">Вопросы по обучению</div>
+        <h2 class="footer__title">Мы рядом на каждом шаге обучения</h2>
+        <p class="footer__text">Что-то непонятно или не открывается? Пиши прямо в наш Telegram — ответим и поможем разобраться.</p>
+        <div class="link-row" style="justify-content:center">
+          <a class="link-chip" href="https://t.me/cometaweb3" target="_blank" rel="noopener">@cometaweb3</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom" data-delay="200">
+        <div class="mono-caption">© 2026 KOMETA · WEB3 AGENCY</div>
+        <div class="footer__bottom-mid">КОМЕТА × ПАРТНЁРСКАЯ ПРОГРАММА · 2026</div>
+        <div class="mono-caption">KOMETA.WEB3</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="busy-overlay" id="busyOverlay"><div class="busy-spinner"></div></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
